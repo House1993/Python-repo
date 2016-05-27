@@ -14,13 +14,14 @@ if __name__ == "__main__":
     # list deep copy f = d[:]
     # tim_sort is a sorting algorithm
     statement = "a=s[:]; tim_sort(a)"
+    # in setup, code shouldn't have tabs before.
     setup = \
         '''
-        import random
+import random
 
-        random.seed('fang')
-        s = [random.random() for i in range(1000)]
-        tim_sort = list.sort
+random.seed('fang')
+s = [random.random() for i in range(1000)]
+tim_sort = list.sort
         '''
     # The way timeit works is to run SETUP once and then make repeated calls to STATEMENT
     timer = timeit.Timer(statement, setup)
